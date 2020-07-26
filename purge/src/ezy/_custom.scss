@@ -1,0 +1,7 @@
+#footer{
+	background: url(../images/bg_footer.jpg);
+	
+}
+@include same-as('background-size',('#footer')){
+	background-size: cover;
+}

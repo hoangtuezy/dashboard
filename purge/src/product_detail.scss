@@ -1,0 +1,79 @@
+@import 'styles/config';
+@import 'functions';
+#product-detail-left{
+	width: 500px;
+}
+#product-detail-right{
+	width: calc(100% - 530px);
+}
+#product_detail{
+	justify-content: space-between;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.product-info{
+	display: block;
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+			&:not(:last-child){
+			border-bottom: 1px dashed #ccc;
+		}
+}
+.gia-product{
+	color: #df0000;
+	font-size: 18px;
+}
+.usual { margin: 30px 0;width: 100%; }
+.usual ul.tab_content {margin: 0px;padding: 0px;display: flow-root;border-bottom: 1px solid #d41919;/* height: 43px; */}
+.usual ul.tab_content li { display: inline-block; list-style: none outside none; }
+.usual ul.tab_content li:last-child { background: none; }
+.usual ul.tab_content a { color: #333; display: block; padding: 6px 15px; font-size: 18px; }
+.usual ul.tab_content a:hover { color: #333333; }
+.usual ul.tab_content a.selected {border-top: 5px solid #d41919;border-bottom: 1px solid #d41919;border-left: 1px solid #d41919;border-right: 1px solid #d41919;color: #d41919;cursor: default;position: relative;top: 1px;z-index: 1;color: #FFF;background: #d41919;}
+.content_tab { border-left: 1px solid #d41919; border-right: 1px solid #d41919; border-bottom: 1px solid #d41919; padding: 20px; position: relative; top: -1; }
+.showhinh{
+	margin-bottom: 15px;
+}
+h1.product-detail-title{
+	font-family: $font-bold;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: #007ddd;
+}
+.p_detail_add_to_cart{
+	display: inline-flex;
+	background-color: #0b3d20;
+	border: 0;
+	border-radius: 5px;
+	color: #FFF;
+	outline: 0;
+	cursor: pointer;
+	padding: 10px 20px;
+	span{
+		margin-right: 10px;
+	}
+}
+.product-price{
+	display: flex;
+	align-items: center;
+}
+.gia-product.gia-cu{
+	font-size: 14px;
+	color: #717171;
+	text-decoration: line-through;
+	&:before{
+		content: "-";
+		margin: 0 10px;
+	}
+}
+@media (max-width: 991px){
+	#product-detail-left,#product-detail-right{
+		width: calc(50% - 15px);
+	}
+}
+@media (max-width: 767px){
+	#product-detail-left,#product-detail-right{
+		width: 100%;
+	}
+}

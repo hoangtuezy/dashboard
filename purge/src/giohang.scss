@@ -1,0 +1,349 @@
+@import 'styles/config';
+@import 'functions';
+
+#giohang {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $base-font-family;
+    color: #3e3e3e;
+    font-size: 12px;
+}
+
+.giohang-icon {
+    position: relative;
+    margin-right: 15px;
+}
+
+.giohang-icon .count_cart {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.btn-del {
+    /* width: 100%; */
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    background: #2c2e2d;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#shopping-cart {
+    width: 100%;
+    max-width: 100%;
+    color: #454545;
+    border: 1px solid #efefef;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+#shopping-cart .soluong {
+    /* width: calc(100% - 40px)!important; */
+    border-right: 1px solid #cccccc !important;
+}
+
+#shopping-cart .sc-stt {
+    width: 80px;
+}
+
+@media (max-width: 991px) {
+    #shopping-cart .sc-stt {
+        display: none;
+    }
+}
+
+#shopping-cart .sc-title {
+    position: relative;
+    text-align: left;
+    color: #000;
+    width: calc(100% - 650px);
+    position: relative;
+    /* color: #f00; */
+}
+
+#shopping-cart .sc-title a {
+    font-family: $font-bold;
+}
+
+@media (max-width: 991px) {
+    #shopping-cart .sc-title {
+        width: calc(100% - 570px);
+    }
+}
+
+#shopping-cart .sc-price,
+#shopping-cart .sc-quantity,
+#shopping-cart .sc-image {
+    width: 125px;
+}
+
+#shopping-cart .sc-total-price {
+    text-align: right;
+    font-family: $font-bold;
+    width: 150px;
+}
+
+#shopping-cart .cart-label {
+    /* font-family: $font-bold; */
+}
+
+#shopping-cart .cart-label,
+#shopping-cart .cart-item {
+    padding: 10px;
+    border-bottom: 1px solid #ededed;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    #shopping-cart .cart-item {
+        flex-flow: wrap;
+    }
+}
+
+@media (max-width: 767px) {
+    #shopping-cart .cart-label {
+        display: none;
+    }
+
+    #shopping-cart .sc-image {
+        position: absolute;
+    }
+
+    #shopping-cart .sc-price,
+    #shopping-cart .sc-quantity,
+    #shopping-cart .sc-total-price,
+    #shopping-cart .sc-title {
+        width: 100%;
+        text-align: right;
+        padding: 5px 0;
+    }
+
+    #shopping-cart .soluong_11 {
+        float: right;
+    }
+
+    #shopping-cart .soluong_11 {
+        float: right;
+    }
+
+    .btn-del {
+        right: unset;
+        left: 15px;
+        top: 90px;
+        width: 45px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #shopping-cart .sc-image {
+        position: relative;
+        float: right;
+        width: 100%;
+        text-align: right;
+    }
+}
+
+.cart-buttons {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.cart-summary {
+    padding-right: 20px;
+    text-align: right;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.cart-summary span {
+    color: #df0000;
+    font-family: $font-bold;
+    margin-left: 20px;
+}
+
+.product_info .btn-giohang:before {
+    content: "\f07a";
+    font-family: FontAwesome;
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+.soluong_11 {
+    border: 1px solid #CCC;
+    /* float: left; */
+    height: 32px;
+    display: inline-flex;
+}
+
+.soluong {
+    border: none;
+    outline: 0;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #ccc;
+    float: left;
+    width: 85px;
+    height: 100%;
+    text-align: center;
+}
+
+.soluong_11 .a_1 {
+    float: left;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #000;
+    font-size: 10px;
+    /* border-left: 1px solid; */
+}
+
+.product_info .btn-muangay,
+.product_info .btn-giohang {
+    color: #FFF;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-right: 15px;
+    border-radius: 5px;
+    /* font-family: "$base-font-family"; */
+    cursor: pointer;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.product_info .btn-muangay {
+    background-color: #df0000;
+}
+
+.product_info .btn-giohang {
+    background: #424242;
+}
+
+.product_info .btn-giohang.muangay {
+    background-color: #f13d52;
+}
+
+.product_info .btn-giohang:before {
+    content: "\f07a";
+    font-family: FontAwesome;
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+.order_item {
+    position: relative;
+    border-bottom: 1px solid #46ad00;
+    padding-bottom: 13px;
+}
+
+.order_item .detail {
+    margin-left: 5px;
+    text-align: right;
+}
+
+.order_item h3 {
+    font-size: 14px;
+    /* font-family: "roboto-bold"; */
+}
+
+.order_item .order_item_total {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #df0000;
+    /* font-family: $font-bold; */
+}
+
+body.thanhtoan .form-check-label {}
+
+.form-check-input {
+    margin: 0;
+    margin-right: 10px;
+    position: relative;
+}
+
+.form-check {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.pt_thanhtoan:not(.active) {
+    display: none;
+}
+
+#giohang_tpl .btn {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    /* font-family: montserrat-bold; */
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    height: 40px;
+    cursor: pointer;
+}
+
+#giohang_tpl .btn+.btn {
+    margin-left: 10px;
+}
+
+#giohang_tpl .btn-giohang-submit {
+    background-color: #2c2e2d;
+    color: #FFF;
+    /* margin-top: 15px; */
+}
+
+#giohang_tpl .btn-giohang-thanhtoan {
+    background-color: #f00;
+    color: #FFF;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    /* justify-content:space-between; */
+    /* align-items: center; */
+}
+
+body.thanhtoan .border-success {
+    border-color: #f1c7cb !important;
+}
+
+body.thanhtoan .border-success {
+    border-color: #c1ccc1 !important;
+}
+
+.xhiden {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .xhiden {
+        display: block;
+    }
+}

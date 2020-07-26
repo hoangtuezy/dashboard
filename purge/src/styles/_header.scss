@@ -1,0 +1,43 @@
+#header{
+	background: url(../images/bg_header.jpg);
+	background-size:cover;
+	height: 150px;
+	.container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+#logo{
+	width: 180px;
+}
+#header-hotline{
+	width: 210px;
+	height: 104px;
+	background: url(../images/header-hotline.png);
+	padding-left: 90px;
+	.label{
+		font-family: utm-helvetin;
+		font-size: 18px;
+		color: #000;
+	    margin-bottom: 10px;
+	}
+	.number{
+		font-size: 21px;
+		color: #FFF;
+		font-family: utm-helvetin;
+		line-height: 1.4;
+	}
+}
+#topbar{
+	background: #f2f2f2;
+	@include height2padding(35px,14px);
+	color: #363636;
+	.container{
+		display: flex;
+
+	}
+	.icon:before{
+		margin-right: 8px;
+	}
+}

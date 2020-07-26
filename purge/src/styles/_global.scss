@@ -1,0 +1,105 @@
+body{
+	line-height: $base-line-height;
+	font-size: $base-font-size;
+	font-family: $base-font-family;
+	background: #fff;
+}
+@each $bg , $val in $background{
+	.bg-#{$bg}{
+		background-color: $val;
+	}
+}
+@each $fs in $fontsizes{
+	.fs-#{$fs}{
+		font-size: $fs * 1px;
+	}
+}
+.grecaptcha-badge{
+	display: none;
+}
+#menu_responsive:not(.mm-menu){
+	display: none;
+}
+.icon { position: relative;display: flex;align-items: center; }
+.icon:before { font-family: "FontAwesome"; }
+.icon.area:before { content: "\f1fe "; }
+.icon.user:before { content: "\f007 "; }
+.icon.home:before { content: "\f015"; }
+.icon.marker:before { content: "\f041";  }
+.icon.email:before { content: "\f003";  }
+.icon.hotline:before { content: "\f095 ";  }
+.icon.global:before { content: "\f0ac"; }
+.icon.calendar:before { content: "\f073 "; }
+.icon.star:before { content: "\f005"; }
+.icon.view:before { content: "\f06e "; }
+.icon.clock:before { content: "\f017"; }
+.icon.price:before { content: "\f155 "; }
+.icon.bar:before { content: "\f0c9 "; font-size: 24px; top: 0; display: block; }
+.icon.facebook:before { content: "\f230 "; }
+.icon.comment:before { content: "\f086"; }
+.icon.whatsapp:before { content: "\f232"; }
+.icon.sms:before { content: "\f0e5"; }
+.icon.cart:before { content: "\f07a "; }
+
+.chiase{
+	display: flex;
+	align-items: center;
+}
+.h1_tieude{
+	position: absolute;
+	top: -999px;
+	z-index: -9;
+	color: transparent;
+}
+.fb_iframe_widget{
+	line-height: 1;
+}
+.header-title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding-bottom: 15px;
+	margin-bottom: 25px;
+}
+.header-title{
+	.h2-title{
+		font-family: $font-semi-bold;
+		font-size: 22px;
+		color: #212121;
+	}
+	background: url(../images/h2_title.png) bottom center no-repeat; 
+}
+.header-long-title{
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	.h2-long-title{
+		font-family: $font-semi-bold;
+		font-size: 30px;
+		color: #0b3d20;
+		margin-right: 15px;
+	}
+	.long-title-right{
+		display: flex;
+		flex-wrap: wrap;
+		span{
+			font-family: $font-semi-bold;
+			color: #212121;
+			font-size: 16px;
+			cursor: pointer;
+			margin: 0 15px;
+			@include hover2border(#0b3d20,2px){
+				padding-bottom: 2px;
+			}
+		}
+	}
+}
+.product_cat_items{
+	transition: all 0.5s;
+}
+.product_cat_items:not(.active){
+	height: 0;
+	opacity: 0;
+	transition: all 0.5s;
+}

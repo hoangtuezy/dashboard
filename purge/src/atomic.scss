@@ -1,0 +1,20 @@
+@import 'styles/config';
+@import 'functions';
+@import "scss/functions";
+@import "scss/variables";
+@import "scss/mixins";
+@import "scss/mixins/breakpoints";
+@import "scss/mixins/grid-framework";
+@import "scss/mixins/grid";
+
+@import "atomic/reset";
+@import "atomic/animated";
+@import "atomic/ultilities.scss";
+@import "atomic/input";
+@import "atomic/grid";
+@import "atomic/pagination";
+@import "atomic/items";
+@import "atomic/margin";
+@import "atomic/btn";
+@import "atomic/responsive";
+

@@ -1,0 +1,49 @@
+.btn_res{
+	display: none;
+	@media (max-width: 1200px){
+			display: block;
+	}
+}
+#header{
+	background-color: #615b56;
+	&-left{
+
+	}
+	&-right{
+		width: 100%;
+		max-width: 900px;
+		.slogan{
+			font-family: 'bevietnam-light';
+			font-size: 18px;
+			color: #dfcf37;
+		}
+	}
+}
+#header-info{
+	height: 70px;
+	align-items: center;
+}
+#header .giohang{
+	width: 40px;
+    height: 40px;
+    background: #ddcd35;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+#block-tintuc{
+	background: url(../images/bg_tintuc.jpg);
+	background-size: cover;
+}
+@include same-as('',('#header-right .label')){
+	font-size: 15px;
+	font-family: 'bevietnam-light';
+	color: #928f8d;
+}
+@include same-as('',('#header-right .value')){
+	font-size: 15px;
+	font-family: 'bevietnam-medium';
+	color: #bfbfbf;
+}

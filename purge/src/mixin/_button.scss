@@ -1,0 +1,10 @@
+%base-btn{
+	background: none;
+	border-color: transparent;
+	outline: none;
+}
+@mixin btn(){
+	@include ezy-class("button"){
+		@extend %base-btn;
+	}
+}

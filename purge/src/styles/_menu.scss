@@ -1,0 +1,109 @@
+#menu{
+    font-size: 18px;
+    font-family: 'bevietnam-light';
+    color: #fff;
+    height: 50px;
+    align-items: center;
+    justify-content: flex-end!important;
+    .menu-left{
+        width: 95px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+    }
+    .menu-left:not(.active) ~ .nav-ul{
+        width: 0;
+        overflow: hidden;
+        transition: all 0.8s;
+        margin: 0 15px;
+    }
+    .nav-ul{
+        height: inherit;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 175px);
+    margin: 0 20px;
+        transition: all 0.8s;
+    }
+    .nav-ul-list,.nav-ul-cat,.nav-ul-item{
+        display: none;
+        position: absolute;
+        z-index: 99;
+        min-width: 200px;
+    }
+    .nav-ul-list{
+        top: 100%;
+        list-style: none;
+        background-color: #615b56;
+    }
+    .nav-ul-cat,.nav-ul-item{
+        top: 0;
+        left: 100%;
+        list-style: none;
+        background-color: #615b56;
+        border-left: 1px solid #fff;
+    }
+    li.menu{
+        height: inherit;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:not(:last-child)::after{
+        }
+    }
+    .menu-text{
+        font-family:inherit;
+        font-size: inherit;
+        color: inherit;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        &:hover{
+            color: #fbe834;
+        }
+        span{
+            white-space: nowrap;
+
+            @include hover2border(#fbe834,2px){
+            }
+
+        }
+    }
+    .menu-list-text,.menu-cat-text,.menu-item-text{
+        display: block;
+        padding: 12px 15px;
+        color: #FFF;
+        white-space: nowrap;
+        font-size: 15px;
+        line-height: 1;
+        &:hover {
+            background-color: darken(#615b56, 15%);
+        }
+    }
+    .menu-list{
+        position: relative;
+    }
+    .menu-list:not(:last-child) .menu-list-text,
+    .menu-cat:not(:last-child) .menu-cat-text,
+    .menu-item:not(:last-child) .menu-item-text{
+        border-bottom: 1px solid #fff;
+    }
+    li.menu:hover .nav-ul-list{
+        display: block;
+    }
+    .menu-list:hover .nav-ul-cat{
+        display: block;
+    }
+    .menu-cat:hover .nav-ul-item{
+        display: block;
+    }
+}
+.sticky ~ #menu{
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    background: #FFF;
+}

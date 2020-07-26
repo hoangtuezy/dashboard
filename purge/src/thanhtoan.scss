@@ -1,0 +1,118 @@
+@import 'styles/config';
+@import 'functions';
+@import "scss/functions";
+@import "scss/variables";
+@import "scss/mixins";
+
+.checkout{
+	border: 1px solid #efefef;
+	border-radius: 5px;
+	h2{
+		font-family: $font-bold;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #ccc;
+	}
+	.final_total{
+		font-family: $font-bold;
+		font-size: 17px;
+		color: #ff0000;
+	}
+	label{
+		display: flex;
+		align-items: center;
+		margin-bottom: 5px;
+		flex-wrap: wrap;
+		position: relative;
+		[type=radio]{
+			margin-right: 10px;
+		}
+	}
+	.payment_content{
+		opacity: 0;
+		height: 0;
+		position: absolute;
+		transition: all 0.1s;
+	}
+	input[type=radio]:checked ~ div.payment_content{
+		display: block;
+		width: 100%;
+		position: relative;
+		height: auto;
+		opacity: 1;
+		transition: all 0.4s;
+	}
+}
+.checkout_right{
+	padding: 15px 20px;
+	 top: 0;
+	    position: sticky;
+	    border-left: 1px solid #efefef;
+}
+.checkout_left{
+	padding: 15px 20px;
+	border-right: 1px solid #efefef;
+	    top: 0;
+	    position: sticky;
+}
+.input_checkout{
+	margin-bottom: 15px;
+}
+textarea.form-control{
+	height: 100px;
+}
+.order_item{
+	display: flex;
+	justify-content: space-between;
+	
+	
+	.detail{
+		width: calc(100% - 110px);
+		text-align: right;
+	}
+}
+.payment{
+    padding: 5px 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.checkout_total,.order_item{
+	border-bottom: 1px dashed #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.thanhtoan-button{
+	display: flex;
+	flex-wrap:wrap;
+	margin-top: 15px;
+	.btn{
+		width: 50%;
+		border: 1px solid transparent;
+		height: 40px;
+		text-align: center;
+		outline: none;
+		background-color: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+	.btn.btn-danger{
+		background-color: #df0000;
+		color: #fff;
+		&:hover{
+			border-color: #df0000;
+			background-color: #fff;
+			color: #df0000;
+		}
+	}
+	.btn.btn-sucess{
+		background-color: #235036;
+		color: #fff;
+		&:hover{
+			border-color: #235036;
+			background-color: #fff;
+			color: #235036;
+		}
+	}
+}

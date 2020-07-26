@@ -1,0 +1,32 @@
+h1.title{
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.news_detail_info{
+	position: relative;
+	display: flex;
+	
+	.calendar{
+		margin-right: 15px;
+	}
+}
+.news_detail_template{
+	width: 100%;
+	.icon{
+		display: flex;
+		align-items:center;
+	}
+}
+.othernews{
+	margin-bottom: 30px;
+	ul{
+		li{
+			padding-bottom: 5px;
+			margin-bottom: 5px;
+			
+		}
+		li:not(:last-child){
+			border-bottom: 1px dashed #ccc;
+		}
+	}
+}

@@ -1,0 +1,86 @@
+.item.product{
+	position: relative;
+	line-height: 1.5;
+	margin-bottom: 30px;
+	padding: 9px;
+	border: 1px solid #efefef;
+	background-color: #fff;
+	h3{
+		text-align: center;
+	}
+	.detail{
+		padding: 5px 0;
+		line-height: 2;
+	}
+	.href{
+		font-family: bevietnam-regular;
+		font-size: 17px;
+		color: #615b56;
+	}
+	.price{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.giaban{
+		color: #dfcf37!important;
+		font-size: 18px;
+		font-family: bevietnam-regular;
+		margin: 0 5px;
+	}
+	.giacu{
+		color: #4b4b4b;
+		font-size: 13px;
+		font-family: bevietnam-regular;
+		margin: 0 5px;
+		text-decoration: line-through;
+	}
+	.icon:before{
+		position: relative;
+		margin-right: 5px;
+		top: -2px;
+		font-size: 16px;
+	}
+	.product-bottom{
+		background-color: rgba(#000,0.6);
+		color: #FFF;
+		position: absolute;
+		opacity: 0;
+		transition: all 0.3s;
+		bottom: 0;
+		padding: 7px 15px;
+		width: 100%;
+		height: 40px;
+		align-items: center;
+		justify-content: center;
+		text-transform: uppercase;
+
+	}
+	&:hover{
+		.product-bottom{
+			opacity: 1;
+			transition: all 0.3s;
+		}
+		.image img{
+			filter: brightness(0.7);
+		}
+	}
+	.add_cart{
+		text-align: center;
+	}
+	.add_cart,.view_product{
+		display: inline-flex;
+		align-items: center;
+		font-size: 12px;
+		color: #eeeeee;
+		cursor: pointer;
+	}
+	.icon.cart:before{
+		content: "\f07a";
+	}
+	
+}
+.index_tintuc.item{
+	padding: 15px;
+	border: 1px solid #ddd;
+}

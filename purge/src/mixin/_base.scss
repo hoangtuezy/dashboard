@@ -1,0 +1,19 @@
+@use "sass:map";
+@mixin class($clz){
+	.#{$base-prefix}-#{$clz}{
+		@content;
+	}
+}
+@mixin id($clz){
+	##{$base-prefix}-#{$clz}{
+		@content;
+	}
+}
+
+$same-as-name: ();
+@mixin same-as($name:'',$samimap:()){
+	$implode : implode($samimap,',');
+	#{$implode}{
+		@content;
+	}
+}

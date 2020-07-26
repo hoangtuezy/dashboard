@@ -1,0 +1,18 @@
+@mixin generate-font($font-library){
+  @each $name,$url_map in $font-library{
+    $_font-urls-list: ();
+    @each $font-src in $url_map{
+      $_tmp: 'url("../fonts/#{$font-src}")';
+      $_font-urls-list: append($_font-urls-list,$_tmp );
+    }
+    $font-urls: implode($_font-urls-list,",");
+    @font-face{
+      font-family: "#{to-lower-case($name)}";
+      src: $font-urls;
+    }
+    .#{to-lower-case($name)}{
+      font-family: "#{to-lower-case($name)}";
+      font-weight: normal;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.container{
+	width: 100%;
+	max-width: $container-width;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+	margin: 0 auto;
+
+	.container{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+.row{
+	display: flex;
+	flex-wrap:wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.no-gutters{
+	margin-right: 0;
+	margin-left: 0;
+
+	> .col,
+	> [class*="col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+[class*="col-"]{
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%;
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        min-width: 0; // See https://github.com/twbs/bootstrap/issues/25410
+        max-width: 100%;
+      }
+
+      @if $grid-row-columns > 0 {
+        @for $i from 1 through $grid-row-columns {
+          .row-cols#{$infix}-#{$i} {
+            @include row-cols($i);
+          }
+        }
+      }
+
+      .col#{$infix}-auto {
+        @include make-col-auto();
+      }
+
+      @if $grid-columns > 0 {
+        @for $i from 1 through $grid-columns {
+          .col#{$infix}-#{$i} {
+            @include make-col($i, $grid-columns);
+          }
+        }
+      }
+
+      // .order#{$infix}-first { order: -1; }
+      // .order#{$infix}-last { order: $grid-columns + 1; }
+
+      // @for $i from 0 through $grid-columns {
+      //   .order#{$infix}-#{$i} { order: $i; }
+      // }
+
+      // @if $grid-columns > 0 {
+      //   // `$grid-columns - 1` because offsetting by the width of an entire row isn't possible
+      //   @for $i from 0 through ($grid-columns - 1) {
+      //     @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+      //       .offset#{$infix}-#{$i} {
+      //         @include make-col-offset($i, $grid-columns);
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+@for $i from 1 through 10{
+    .gutter-#{$i*5}{
+      margin-left: -$i*5/2*1px;
+      margin-right: -$i*5/2*1px;
+      > [class*="col-"]{
+        padding-left: $i*5/2*1px;
+        padding-right: $i*5/2*1px;
+      }
+    }
+  } 

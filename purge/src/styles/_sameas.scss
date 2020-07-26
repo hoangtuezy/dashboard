@@ -1,0 +1,24 @@
+%padding-40{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+%flex-between{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+@include same-as('padding-40',$block-padding-40){
+	@extend %padding-40;
+}
+@include same-as('fs-15',$sami-fs-15){
+	font-size: 15px;
+}
+@include same-as('color-white',$sami-color-white){
+	color: #fff;
+}
+@include same-as('text-center',$sami-text-center){
+	text-align: center;
+}
+@include same-as('flex-between',$flex-between){
+	@extend %flex-between;
+}

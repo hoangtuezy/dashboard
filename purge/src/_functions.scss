@@ -1,0 +1,123 @@
+@function implode($pieces, $glue: "") {
+	$result: null;
+	@for $i from 1 through length($pieces) {
+		$piece: nth($pieces, $i);
+		@if type-of($piece) == list {
+			$result: unquote("#{$result}#{$glue}#{implode($piece, $glue)}");
+		} @else {
+			$result: unquote("#{$result}#{$glue}#{$piece}");
+		}
+	}
+	@if $result != null {
+		$result: str-slice($result, str-length($glue) + 1, -1);
+	}
+	@return $result;
+}
+@function h2p($height,$fontsize,$lineheight:$base-line-height){
+	$tmp: $height - ($fontsize * $lineheight);
+	$calc : ceil($tmp);
+	@return round($calc/2);
+}
+@mixin height2padding($height,$fontsize,$lineheight:$base-line-height){
+	font-size: $fontsize;
+	line-height: $lineheight;
+	padding-top: h2p($height,$fontsize,$lineheight);
+	padding-bottom: h2p($height,$fontsize,$lineheight);
+}
+@mixin hover2border($bordercolor,$border-width: 1px){
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		height: $border-width;
+		width: 0;
+		background-color: $bordercolor;
+		transition: all 0.4s;
+	}
+	&.active:before,&:hover:before{
+		width: 100%;
+		transition: all 0.3s;
+	}
+	@content;
+}
+
+@mixin make-btn($h,$border-color:#797979,$w: 1px,$fs:13px,$lh:1.5){
+	$border-width: $w;
+	$background-color: $border-color;
+	%tmp-v-button{
+		content: "";
+		position: absolute;
+		background-color:$background-color;
+		transition: all 0.5s;
+	}
+	.v-btn{
+		position: relative;
+		padding-left: 15px;
+		padding-right: 15px;
+		@include height2padding($h,$fs,$lh);
+		border: 1px solid ;
+		color:$border-color;
+		transition: all 1s;
+		&:before,&:after{
+			@extend %tmp-v-button;
+			left: 0;
+		}
+		&:before{
+			top:0;
+			height: $border-width;
+			width: 0;
+		}
+		&:after{
+			bottom: 0;
+			width: $border-width;
+			height: 0;
+		}
+		>span{
+			&:before,&:after{
+				@extend %tmp-v-button;
+				right: 0;
+			}
+			&:before{
+				top:0;
+				height: 0;
+				width: $border-width;
+			}
+			&:after{
+				bottom: 0;
+				width: 0;
+				height: $border-width;
+			}
+		}
+
+		&:hover{
+			border-color: transparent;
+			transition: all 0.5s;
+			&:before{
+				width: 100%;
+				transition: all 0.2s;
+			}
+			&:after{
+				height: 100%;
+				transition: all 0.3s;
+			}
+			>span{
+				&:before{
+					height: 100%;
+					transition: all 0.4s;
+				}
+				&:after{
+				  width: 100%;
+				  transition: all 0.5s;	
+				}
+			}
+
+
+
+		}
+
+	}
+}
