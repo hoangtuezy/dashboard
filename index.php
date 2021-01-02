@@ -9,7 +9,7 @@ $container->singleton(
     'PDO',
     function () {
 
-        $db = new \PDO('mysql:dbname=demo;host=localhost', 'root', '');
+        $db = new \PDO('mysql:dbname=nina;host=localhost', 'root', '');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->exec("SET NAMES 'UTF8'");
         return $db;
